@@ -1,14 +1,28 @@
-'use strict';
+define([
+    'angular',
+    '../api_constants',
+    'oclazyload',
+    'ui.router'
+], function(angular, API) {
 
-angular.module('myApp.view2', ['ngRoute'])
+  'use strict';
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view2', {
-    templateUrl: 'view2/view2.html',
-    controller: 'View2Ctrl'
-  });
-}])
+  var view2 = angular.module('wesapplication.view2', ['ui.router', 'oc.lazyLoad'])
 
-.controller('View2Ctrl', [function() {
+      .config(
+          ['$stateProvider', '$ocLazyLoadProvider',
+              function ($stateProvider, $ocLazyLoadProvider) {
+              $stateProvider
+                  .state('view2', {
+                      url: '/view2',
+                      templateUrl: 'view2/view2.html',
+                      controller: 'View2Ctrl'
+                  });
+              }])
 
-}]);
+    .controller('View2Ctrl', [function () {
+
+    }]);
+
+  return view2;
+});

@@ -1,14 +1,34 @@
-'use strict';
+define([
+    'angular',
+    '../api_constants',
+    'oclazyload',
+    'ui.router'
+],
+    function(angular, API) {
+  'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+  var view1 = angular.module('wesapplication.view1', ['ui.router', 'oc.lazyLoad'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
-  });
-}])
+    .config(
+        [
+            '$stateProvider',
+            '$ocLazyLoadProvider',
+        function ($stateProvider, $ocLazyLoadProvider) {
 
-.controller('View1Ctrl', [function() {
+            $stateProvider
 
-}]);
+                .state('view1',
+                    {
+                        url: '/view1',
+                        templateUrl: '/view1/view1.html',
+                        controller: 'View1Ctrl'
+                    })
+
+        }])
+
+    .controller('View1Ctrl', [function () {
+
+    }]);
+
+  return view1;
+});
