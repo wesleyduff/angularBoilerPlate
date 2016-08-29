@@ -4,7 +4,6 @@ require.config({
     'angular' : 'bower_components/angular/angular',
     'lodash' : 'bower_components/lodash/lodash.min',
     'ui.router' : 'bower_components/angular-ui-router/release/angular-ui-router.min',
-    'ngRoute' : 'bower_components/angular-route/angular-route.min',
     'oclazyload' : 'bower_components/oclazyload/dist/ocLazyLoad.require.min',
     'ui.bootstrap' : 'bower_components/angular-bootstrap/ui-bootstrap.min',
     'jquery' : 'bower_components/jquery/dist/jquery.min',
@@ -19,7 +18,6 @@ require.config({
     'jquery' : {
       exports: 'jQuery'
     },
-    'ngRoute': ['angular'],
     'lodash' : {
       exports: '_'
     },

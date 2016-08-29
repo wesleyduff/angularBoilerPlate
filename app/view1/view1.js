@@ -2,8 +2,7 @@ define([
     'angular',
     '../api_constants',
     'oclazyload',
-    'ui.router',
-    'ngRoute'
+    'ui.router'
 ],
     function(angular, API) {
   'use strict';
