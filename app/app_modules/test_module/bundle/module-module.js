@@ -1,13 +1,9 @@
-define([
-    angular, /*global angular */
-    './module-controllers.js',
-    './module-factories.js'
-    ], 
-    function(angular){
-    
-    'use strict';
-    
-    angular.module('test_module')
-    .controller('MainController', ['$scope', Controllers.MainController]); /*global Controllers*/
-    
-})
+(function(angular, APP_GLOBALS){
+
+  'use strict';
+
+  angular.module('test_module')
+    .controller('MainController', ['$scope', APP_GLOBALS.Controllers.MainController]);
+  /*global Controllers*/
+
+})(angular, APP_GLOBALS)

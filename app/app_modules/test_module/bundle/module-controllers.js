@@ -1,16 +1,10 @@
-define([
-    angular /* global angular */
-    ],
-    function(){
-        
-        'use strict';
-        
-        var Controllers = {
-            MainController : function($scope){
-                
-            }
-        }
-        
-        return Controllers;
-        
-});
+(function(angular, APP_GLOBALS){
+  'use strict';
+
+  APP_GLOBALS.Controllers = {
+    MainController : function($scope){
+
+    }
+  };
+
+})(angular, APP_GLOBALS);

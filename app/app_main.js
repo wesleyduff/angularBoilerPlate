@@ -36,17 +36,30 @@ define([
 
     /* ----------- SET BASE ROUTE */
       $urlRouterProvider.otherwise('/view1');
-      
+
+      $ocLazyLoadProvider.config({
+        asyncLoader: require
+      });
+
       $stateProvider
 
         .state('test',
             {
                 url: '/test',
-                templateUrl: '/template.html',
-                controller: 'MainController',
+                views: {
+                  'testSection' : {
+                    templateUrl: 'app_modules/test_module/template.html',
+                    controller: 'MainController'
+                  }
+                },
                 resolve: {
                   loadDeps : ['$ocLazyLoad', function($ocLazyLoad){
-                    return $ocLazyLoad.load('./app_modules/test_module/main.js');
+                    return $ocLazyLoad.load({
+                      files: [
+                        './app_modules/test_module/main.js',
+                        './app_modules/test_module/template.html'
+                      ]
+                    });
                   }]
                 }
             }
