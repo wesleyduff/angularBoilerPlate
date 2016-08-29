@@ -2,7 +2,8 @@ define([
     'angular',
     '../api_constants',
     'oclazyload',
-    'ui.router'
+    'ui.router',
+    'ngRoute'
 ],
     function(angular, API) {
   'use strict';
@@ -20,7 +21,7 @@ define([
                 .state('view1',
                     {
                         url: '/view1',
-                        templateUrl: '/view1/view1.html',
+                        templateUrl: 'view1/view1.html',
                         controller: 'View1Ctrl'
                     })
 

@@ -14,7 +14,7 @@ define([
               function ($stateProvider, $ocLazyLoadProvider) {
               $stateProvider
                   .state('view2', {
-                      url: '/view2',
+                      url: '/view2TEST',
                       templateUrl: 'view2/view2.html',
                       controller: 'View2Ctrl'
                   });

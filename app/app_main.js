@@ -7,6 +7,7 @@ define([
   'oclazyload',
   'ui.router',
   'ui.bootstrap',
+  'ngRoute',
 
   //application deps
   'view1/view1',
@@ -19,6 +20,7 @@ define([
   var wesapplication = angular.module('wesapplication', [
     'ui.router',
     'ui.bootstrap',
+    'ngRoute',
     'wesapplication.view1',
     'wesapplication.view2',
     'wesapplication.version'
