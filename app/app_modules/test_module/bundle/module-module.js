@@ -1,12 +1,13 @@
 define([
     angular, /*global angular */
-    './build/module_combined.min'
+    './module-controllers.js',
+    './module-factories.js'
     ], 
     function(angular){
     
     'use strict';
     
     angular.module('test_module')
-    .controller(['$scope', Controllers.MainController]); /*global Controllers*/
+    .controller('MainController', ['$scope', Controllers.MainController]); /*global Controllers*/
     
 })

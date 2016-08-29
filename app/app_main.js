@@ -29,12 +29,29 @@ define([
   wesapplication.config([
     '$urlRouterProvider',
     '$httpProvider',
-    '$ocLazyLoadProvider'
-  , function($urlRouterProvider, $httpProvider, $ocLazyLoadProvider){
+    '$ocLazyLoadProvider',
+    '$stateProvider'
+  , function($urlRouterProvider, $httpProvider, $ocLazyLoadProvider, $stateProvider){
 
 
     /* ----------- SET BASE ROUTE */
       $urlRouterProvider.otherwise('/view1');
+      
+      $stateProvider
+
+        .state('test',
+            {
+                url: '/test',
+                templateUrl: '/template.html',
+                controller: 'MainController',
+                resolve: {
+                  loadDeps : ['$ocLazyLoad', function($ocLazyLoad){
+                    return $ocLazyLoad.load('./app_modules/test_module/main.js');
+                  }]
+                }
+            }
+        );
+
 
   }]);
 

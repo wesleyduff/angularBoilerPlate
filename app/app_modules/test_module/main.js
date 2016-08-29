@@ -1,10 +1,14 @@
 define([
-    angular, /*global angular */
+    angular /*global angular */
     ], 
     function(angular){
     
     'use strict';
     
-    angular.module('test_module', [['./build/module_combined.min']]);
+    angular.module('test_module', [{
+        deps : [
+            'build/module_combined.js'
+            ]
+    }]);
     
 })
